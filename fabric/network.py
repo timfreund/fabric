@@ -147,7 +147,7 @@ def connect(user, host, port):
         # Attempt connection
         try:
             client.connect(host, int(port), user, password,
-                key_filename=env.key_filename, timeout=10)
+                key_filename=env.key_filename, pkey=env.key_value, timeout=10)
             connected = True
             return client
         # BadHostKeyException corresponds to key mismatch, i.e. what on the
